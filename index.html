@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="petunjuk.css">
 </head>
 <body>
   <div id="navbar"></div>
@@ -53,6 +54,24 @@
         </div>
       </div>
     </div>
+    <div class="wadah" style="margin-top: -3.4rem; margin-bottom: 4.2rem; position: relative; z-index: 3;">
+      <details class="soal">
+        <summary>
+          <span class="nomor" style="visibility: hidden;"></span>
+          <span>
+            <span class="tag b2">Panduan Singkat</span>
+            <p class="teks" style="font-family: var(--ui); font-size: 1rem;">Klik untuk melihat petunjuk penggunaan kalkulator</p>
+          </span>
+        </summary>
+        <div class="solusi">
+          <ol class="langkah">
+            <li><h3>Pilih jenis soal</h3><p>Klik salah satu dari 10 topik pada menu di sebelah kiri.</p></li>
+            <li><h3>Masukkan nilai</h3><p>Isi parameter soal. Pisahkan deret data dengan spasi atau koma, dan gunakan titik (.) untuk desimal pada deret data.</p></li>
+            <li><h3>Hitung atau coba contoh</h3><p>Tekan tombol "Hitung" untuk melihat jawaban dan langkahnya, atau tekan "Isi contoh" untuk simulasi otomatis.</p></li>
+          </ol>
+        </div>
+      </details>
+    </div>
     <div class="wadah tata">
       <nav id="nav" class="nav" aria-label="Daftar jenis soal"></nav>
       <main id="panel" class="lembar" tabindex="-1"></main>
@@ -82,5 +101,6 @@
   <script src="navbar.js"></script>
   <script src="soal.js"></script>
   <script src="script.js"></script>
+  <script src="petunjuk.js"></script>
 </body>
 </html>

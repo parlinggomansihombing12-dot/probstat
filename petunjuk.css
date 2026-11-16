@@ -1,0 +1,213 @@
+/* ====== Pelengkap style.css yang terpotong & Desain Responsif ====== */
+.coba {
+  display: inline-block; margin-top: 1rem; padding: 0.55rem 1.05rem; border-radius: var(--r-sm);
+  text-decoration: none; font-weight: 600; font-size: 0.92rem;
+  color: var(--biru-tua); background: var(--biru-muda);
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.coba:hover { background: #dfe6ff; border-color: var(--biru); }
+.coba:active { transform: translateY(1px); }
+
+.kosong {
+  padding: 2rem; text-align: center; color: var(--lembut);
+  background: var(--kartu); border: 1px dashed var(--garis-kuat);
+  border-radius: var(--r-lg);
+}
+
+/* Responsif untuk Tablet & Ponsel */
+@media (max-width: 880px) {
+  .hero-dalam { grid-template-columns: 1fr; }
+  .hero-gambar { max-width: 26rem; }
+  .tata { grid-template-columns: 1fr; margin-top: -2.6rem; }
+  .nav {
+    position: static; max-height: none;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .hero { padding: 2.4rem 0 4.8rem; }
+  .jawaban dl { grid-template-columns: 1fr; gap: 0.15rem; }
+  .jawaban dd { margin-bottom: 0.5rem; font-size: 1.15rem; }
+  .soal .solusi { padding-left: 1.3rem; }
+}
+
+/* ====== Tombol Aksi di Hero ====== */
+.hero-aksi {
+  display: flex; flex-wrap: wrap; gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+.btn-panduan {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font: inherit; font-size: 0.92rem; font-weight: 600;
+  padding: 0.62rem 1.15rem; border-radius: var(--r-sm); cursor: pointer;
+  color: var(--ink); background: var(--teal);
+  border: 1px solid transparent;
+  box-shadow: 0 8px 20px -10px rgba(45, 212, 191, 0.75);
+  transition: transform 0.15s, filter 0.15s;
+}
+.btn-panduan:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.btn-panduan:active { transform: translateY(0); }
+.btn-panduan svg { width: 1.1rem; height: 1.1rem; stroke: currentColor; fill: none; stroke-width: 2.2; }
+
+.btn-panduan-sekunder {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+.btn-panduan-sekunder:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ====== Bagian Petunjuk Penggunaan Kalkulator ====== */
+.panduan-wrap {
+  margin-top: -1.5rem;
+  padding-bottom: 4rem;
+}
+.panduan-kartu {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: var(--r-xl);
+  padding: clamp(1.3rem, 3vw, 2.2rem);
+  box-shadow: var(--bayang-2);
+}
+.panduan-kepala {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: flex-end; gap: 1rem;
+  padding-bottom: 1.2rem; border-bottom: 1px solid var(--garis);
+}
+.panduan-tag {
+  display: inline-block; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--biru); background: var(--biru-muda);
+  padding: 0.25rem 0.7rem; border-radius: 2rem; margin-bottom: 0.45rem;
+}
+.panduan-kepala h2 {
+  margin: 0; font-family: var(--judul);
+  font-size: clamp(1.25rem, 2.3vw, 1.55rem); color: var(--ink);
+}
+.panduan-kepala p {
+  margin: 0.35rem 0 0; color: var(--lembut); max-width: 60ch; font-size: 0.96rem;
+}
+
+/* Grid 4 Langkah Penggunaan */
+.panduan-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem; margin-top: 1.4rem;
+}
+.langkah-kartu {
+  background: var(--bg); border: 1px solid var(--garis);
+  border-radius: var(--r-lg); padding: 1.15rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.langkah-kartu:hover { border-color: var(--garis-kuat); transform: translateY(-2px); }
+.langkah-no {
+  display: inline-grid; place-items: center;
+  width: 2rem; height: 2rem; border-radius: var(--r-sm);
+  background: var(--ink); color: var(--teal);
+  font-family: var(--judul); font-weight: 700; font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+.langkah-kartu h3 {
+  margin: 0 0 0.35rem; font-family: var(--judul);
+  font-size: 1rem; color: var(--ink);
+}
+.langkah-kartu p { margin: 0; font-size: 0.9rem; color: var(--lembut); line-height: 1.55; }
+
+/* Aturan Format Input */
+.aturan-box {
+  margin-top: 1.5rem; padding: 1.15rem 1.3rem;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, var(--biru-muda), #f7f9ff);
+  border: 1px solid #d6e0ff;
+}
+.aturan-box h3 {
+  margin: 0 0 0.65rem; font-family: var(--judul);
+  font-size: 0.96rem; color: var(--biru-tua);
+}
+.aturan-list {
+  margin: 0; padding-left: 1.2rem;
+  display: grid; gap: 0.4rem;
+  font-size: 0.92rem; color: var(--ink-2);
+}
+.aturan-list code {
+  font-family: var(--rumus); font-size: 0.98rem;
+  background: #fff; padding: 0.1rem 0.4rem;
+  border-radius: 4px; border: 1px solid var(--garis-kuat);
+  color: var(--biru-tua);
+}
+
+/* Tab Panduan Pemilihan Kalkulator per Bab */
+.bab-panduan { margin-top: 1.6rem; }
+.bab-panduan > h3 {
+  margin: 0 0 0.75rem; font-family: var(--judul);
+  font-size: 1rem; color: var(--ink);
+}
+.bab-tabs {
+  display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.9rem;
+}
+.bab-tabs button {
+  font: inherit; font-size: 0.86rem; font-weight: 600;
+  padding: 0.45rem 0.95rem; border-radius: 2rem; cursor: pointer;
+  background: #fff; color: var(--lembut);
+  border: 1.5px solid var(--garis);
+  transition: all 0.15s;
+}
+.bab-tabs button:hover { border-color: var(--garis-kuat); color: var(--ink); }
+.bab-tabs button[aria-selected="true"] {
+  background: var(--biru); border-color: var(--biru); color: #fff;
+}
+.bab-detail {
+  background: var(--bg); border: 1px solid var(--garis);
+  border-radius: var(--r-lg); padding: 1.15rem 1.3rem;
+  display: grid; gap: 0.75rem;
+}
+.bab-item {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: center; gap: 0.8rem;
+  padding-bottom: 0.75rem; border-bottom: 1px dashed var(--garis-kuat);
+}
+.bab-item:last-child { padding-bottom: 0; border-bottom: none; }
+.bab-item b { font-family: var(--judul); font-size: 0.95rem; color: var(--ink); display: block; }
+.bab-item span { font-size: 0.88rem; color: var(--lembut); }
+.bab-item a {
+  font-size: 0.85rem; font-weight: 600; text-decoration: none;
+  color: var(--biru-tua); background: #fff;
+  padding: 0.4rem 0.85rem; border-radius: var(--r-sm);
+  border: 1px solid var(--garis-kuat); white-space: nowrap;
+}
+.bab-item a:hover { background: var(--biru-muda); border-color: var(--biru); }
+
+/* Modal Bantuan Cepat */
+dialog.modal-panduan {
+  width: min(36rem, calc(100% - 2rem));
+  border: 1px solid var(--garis); border-radius: var(--r-xl);
+  padding: 0; background: var(--kartu); color: var(--ink);
+  box-shadow: var(--bayang-3);
+}
+dialog.modal-panduan::backdrop {
+  background: rgba(11, 21, 48, 0.65);
+  backdrop-filter: blur(4px);
+}
+.modal-isi { padding: 1.4rem 1.6rem; }
+.modal-atas {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; margin-bottom: 0.9rem;
+}
+.modal-atas h3 { margin: 0; font-family: var(--judul); font-size: 1.15rem; }
+.modal-tutup {
+  width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--garis);
+  background: var(--bg); color: var(--ink); font-size: 1.1rem; cursor: pointer;
+}
+.modal-tutup:hover { background: var(--garis); }
+
+/* Footer */
+.kaki {
+  background: var(--ink); color: #b9c4e4;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.6rem 0; font-size: 0.88rem;
+}
+.kaki-dalam {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: center; gap: 0.8rem;
+}
+.kaki b { color: #fff; font-family: var(--judul); }
