@@ -44,10 +44,11 @@
 
 @media (max-width: 560px) {
   .nb-nama small { display: none; }
-  .nb-menu a { padding: 0.5rem 0.75rem; }
+  .nb-menu { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }   /* 4 menu: digeser ke samping bila sempit */
+  .nb-menu::-webkit-scrollbar { display: none; }
+  .nb-menu a { flex: 0 0 auto; padding: 0.5rem 0.8rem; font-size: 0.9rem; }
+  .nb-menu a svg { display: none; }
 }
 @media (max-width: 420px) {
   .nb-nama { display: none; }
-  .nb-menu { flex: 1; }
-  .nb-menu a { flex: 1; justify-content: center; }
 }

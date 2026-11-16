@@ -75,16 +75,6 @@ const SOAL = [
   jawab: 'P(X = 3) ≈ 0,2503;  P(X ≥ 1) ≈ 0,9437'
 },
 {
-  bab: 'Distribusi', alat: 'poisson',
-  soal: 'Rata-rata ada 4 pelanggan datang ke kasir setiap jam. Berapa peluang tepat 2 pelanggan datang dalam satu jam? Berapa peluang paling banyak 2 pelanggan?',
-  langkah: [
-    { h: 'Tentukan parameter', l: ['Poisson dengan λ = 4'] },
-    { h: 'Tepat 2 pelanggan', l: ['P(X = 2) = e⁻⁴ · 4² / 2! = 8 · e⁻⁴ = 0,1465'] },
-    { h: 'Paling banyak 2 pelanggan', l: ['P(X ≤ 2) = e⁻⁴ (1 + 4 + 8) = 13 · e⁻⁴ = 0,2381'] }
-  ],
-  jawab: 'P(X = 2) ≈ 0,1465;  P(X ≤ 2) ≈ 0,2381'
-},
-{
   bab: 'Distribusi', alat: 'normal',
   soal: 'Nilai ujian berdistribusi normal dengan μ = 70 dan σ = 10. Tentukan (a) peluang nilai lebih dari 85, dan (b) peluang nilai antara 60 dan 80.',
   langkah: [
@@ -104,48 +94,6 @@ const SOAL = [
   jawab: 'Nilai minimum ≈ 82,82'
 },
 {
-  bab: 'Inferensi', alat: 'ci',
-  soal: 'Sampel 36 mahasiswa memiliki rata-rata skor 50 dengan σ = 8. Buat interval kepercayaan 95% untuk rata-rata populasi.',
-  langkah: [
-    { h: 'Galat baku', l: ['SE = σ / √n = 8 / 6 = 1,3333'] },
-    { h: 'Nilai kritis', l: ['Tingkat 95% → α/2 = 0,025 → z = 1,96'] },
-    { h: 'Batas galat dan interval', l: ['E = 1,96 · 1,3333 = 2,6133', '50 − 2,6133 < μ < 50 + 2,6133', '47,39 < μ < 52,61'] }
-  ],
-  jawab: '47,39 < μ < 52,61'
-},
-{
-  bab: 'Inferensi', alat: 'ci',
-  soal: 'Sampel 16 baterai memiliki rata-rata umur 25 jam dengan simpangan baku sampel s = 4. Buat interval kepercayaan 95% untuk rata-rata umur baterai (σ tidak diketahui).',
-  langkah: [
-    { h: 'Pilih distribusi t', l: ['σ tidak diketahui dan n kecil → gunakan t dengan db = n − 1 = 15'] },
-    { h: 'Nilai kritis', l: ['t(0,025; 15) = 2,1314'] },
-    { h: 'Batas galat dan interval', l: ['SE = 4 / √16 = 1', 'E = 2,1314 · 1 = 2,1314', '22,87 < μ < 27,13'] }
-  ],
-  jawab: '22,87 < μ < 27,13'
-},
-{
-  bab: 'Inferensi', alat: 'uji',
-  soal: 'Pabrik mengklaim rata-rata umur baterainya 100 jam. Sampel 25 baterai menghasilkan x̄ = 104 jam dan s = 10. Dengan α = 0,05, apakah klaim itu dapat ditolak? (uji dua arah)',
-  langkah: [
-    { h: 'Hipotesis', l: ['H0: μ = 100', 'H1: μ ≠ 100'] },
-    { h: 'Statistik uji (t, karena memakai s)', l: ['t = (x̄ − μ0) / (s / √n) = (104 − 100) / (10 / 5) = 2', 'db = 25 − 1 = 24'] },
-    { h: 'Daerah kritis', l: ['t(0,025; 24) = 2,0639  →  tolak H0 jika |t| > 2,0639', 'Nilai p ≈ 0,0569'] },
-    { h: 'Keputusan', l: ['|t| = 2 < 2,0639 (p > α), sehingga gagal tolak H0.'] }
-  ],
-  jawab: 'Gagal tolak H0: belum cukup bukti bahwa rata-rata umur baterai berbeda dari 100 jam.'
-},
-{
-  bab: 'Inferensi', alat: 'uji',
-  soal: 'Rata-rata waktu tunggu suatu layanan diklaim 50 menit. Sampel 36 pelanggan memberi x̄ = 52 menit, dan σ = 6 diketahui. Dengan α = 0,05, ujilah apakah waktu tunggu sebenarnya lebih lama dari 50 menit.',
-  langkah: [
-    { h: 'Hipotesis', l: ['H0: μ = 50', 'H1: μ > 50 (uji satu arah kanan)'] },
-    { h: 'Statistik uji (z, karena σ diketahui)', l: ['z = (52 − 50) / (6 / √36) = 2 / 1 = 2'] },
-    { h: 'Daerah kritis', l: ['α = 0,05 → z kritis = 1,645  →  tolak H0 jika z > 1,645', 'Nilai p = 1 − Φ(2) = 0,0228'] },
-    { h: 'Keputusan', l: ['z = 2 > 1,645 (p < α), sehingga tolak H0.'] }
-  ],
-  jawab: 'Tolak H0: ada bukti bahwa waktu tunggu rata-rata lebih dari 50 menit.'
-},
-{
   bab: 'Regresi', alat: 'reg',
   soal: 'Data jam belajar (X) dan nilai (Y) lima mahasiswa: X = 1, 2, 3, 4, 5 dan Y = 2, 4, 5, 4, 6. Tentukan persamaan regresi linear, koefisien korelasi, dan prediksi nilai untuk X = 6.',
   langkah: [
@@ -159,7 +107,7 @@ const SOAL = [
 }
 ];
 
-const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+// Menggunakan esc dari rumus.js (tanpa deklarasi const esc ulang)
 if (typeof document !== 'undefined') {
   const daftar = document.getElementById('daftar'), cari = document.getElementById('cari'), filter = document.getElementById('filter');
   const bab = ['Semua', ...new Set(SOAL.map(s => s.bab))];
