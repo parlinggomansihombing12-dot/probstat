@@ -52,21 +52,6 @@
       ]
     },
     {
-      bab: 'Inferensi',
-      alat: [
-        {
-          id: 'ci',
-          nama: 'Interval kepercayaan rata-rata',
-          ket: 'Pilih distribusi z jika simpangan baku populasi (σ) diketahui. Pilih distribusi t jika hanya simpangan baku sampel (s) yang diketahui.'
-        },
-        {
-          id: 'uji',
-          nama: 'Uji hipotesis rata-rata',
-          ket: 'Menguji klaim nilai rata-rata (μ0) dengan pilihan uji dua arah (≠), kanan (>), atau kiri (<) beserta nilai p-value dan keputusan H0.'
-        }
-      ]
-    },
-    {
       bab: 'Regresi',
       alat: [
         {
